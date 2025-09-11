@@ -1,0 +1,10 @@
+{
+  "name": "TaskMaster Codespace",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "workspace",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [5000, 5173, 5432],
+  "postCreateCommand": "python -m venv .venv && . .venv/bin/activate && pip install -r requirements.txt || true && if [ -d frontend ]; then (cd frontend && npm install) || true; fi",
+  "remoteUser": "vscode"
+}
